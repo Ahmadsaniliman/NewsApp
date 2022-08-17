@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late final Future<NewsModel> newsOnject;
+  late final Future<NewsApiModel> newsOnject;
 
   @override
   void initState() {

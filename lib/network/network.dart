@@ -6,9 +6,9 @@ import 'package:newsapp/model/model.dart';
 import 'dart:developer' as devtool show log;
 
 class Network {
-  Future<NewsModel> getNews() async {
+  Future<NewsApiModel> getNews() async {
     const url =
-        'https://newsapi.org/v2/everything?q=tesla&from=2022-07-11&sortBy=publishedAt&apiKey=b786bc4553bb45a3b45ba1b3a2c8377b';
+        'https://newsdata.io/api/1/news?apikey=pub_103549a091c6757a5cf7e38e4056fdf7ff5a5&q=pegasus&language=en';
 
     final response = await get(
       Uri.parse(
@@ -20,7 +20,7 @@ class Network {
       devtool.log(
         Uri.encodeFull(response.body),
       );
-      return NewsModel.fromJson(
+      return NewsApiModel.fromJson(
         json.decode(response.body),
       );
     } else {
